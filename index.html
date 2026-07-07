@@ -36,18 +36,12 @@
         </section>
         <section class="cards page__section">
           <ul class="cards__list">
-            <!--
-              PASSO 1: Cartões removidos do HTML.
-              Os cartões serão gerados dinamicamente via JavaScript.
-            -->
           </ul>
         </section>
       </main>
       <footer class="footer page__section">
         <p class="footer__copyright">© 2025 Around The U.S.</p>
       </footer>
-
-      <!-- PASSO 1: Template criado com a estrutura do cartão -->
       <template id="card-template">
         <li class="card">
           <img class="card__image" src="" alt="" />
@@ -66,7 +60,6 @@
           </div>
         </li>
       </template>
-
       <div class="popup" id="edit-popup">
         <div class="popup__content">
           <button
@@ -75,20 +68,31 @@
             type="button"
           ></button>
           <h3 class="popup__title">Editar perfil</h3>
-          <form class="popup__form" id="edit-profile-form">
+          <form class="popup__form" id="edit-profile-form" novalidate>
             <input
               class="popup__input popup__input_type_name"
+              id="profile-name-input"
               name="name"
               placeholder="Nome"
               type="text"
+              minlength="2"
+              maxlength="40"
+              required
             />
+            <span class="popup__error" id="profile-name-error"></span>
             <input
               class="popup__input popup__input_type_description"
+              id="profile-description-input"
               name="description"
               placeholder="Sobre mim"
               type="text"
+              minlength="2"
+              maxlength="200"
+              required
             />
-            <button class="button popup__button" type="submit">Salvar</button>
+            <span class="popup__error" id="profile-description-error"></span>
+
+            <button class="button popup__button popup__button_inactive" type="submit" disabled>Salvar</button>
           </form>
         </div>
       </div>
@@ -100,22 +104,28 @@
             type="button"
           ></button>
           <h3 class="popup__title">Novo local</h3>
-          <form class="popup__form" id="new-card-form">
+          <form class="popup__form" id="new-card-form" novalidate>
             <input
               class="popup__input popup__input_type_card-name"
+              id="card-name-input"
               name="place-name"
               placeholder="Título"
-              required
               type="text"
+              minlength="2"
+              maxlength="30"
+              required
             />
+            <span class="popup__error" id="card-name-error">Preencha esse campo.</span>
             <input
               class="popup__input popup__input_type_url"
+              id="card-link-input"
               name="link"
               placeholder="Link de Imagem"
-              required
               type="url"
+              required
             />
-            <button class="button popup__button" type="submit">Criar</button>
+            <span class="popup__error" id="card-link-error">Por favor, insira um endereço web.</span>
+            <button class="button popup__button popup__button_inactive" type="submit" disabled>Criar</button>
           </form>
         </div>
       </div>
