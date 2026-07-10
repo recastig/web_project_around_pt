@@ -2,7 +2,7 @@
 
 ![Around The U.S.](images/logo.svg)
 
-## 📋 Sobre o Projeto
+## 📋 Sobre o Projeto:
 
 Around The U.S. é uma página interativa de galeria de lugares turísticos, desenvolvida como parte do bootcamp de desenvolvimento web. O projeto permite aos usuários visualizar, adicionar e interagir com cartões de locais, além de editar seu perfil.
 
