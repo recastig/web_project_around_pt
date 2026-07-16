@@ -1,10 +1,9 @@
-import { openModal } from './utils.js';
-
 export class Card {
-    constructor({ name, link }, templateSelector) {
+    constructor({ name, link }, templateSelector, handleCardClick) {
         this._name = name;
         this._link = link;
         this._templateSelector = templateSelector;
+        this._handleCardClick = handleCardClick;
     }
 
     _getTemplate() {
@@ -23,15 +22,7 @@ export class Card {
     }
 
     _handleImageClick() {
-        const popup = document.querySelector('#image-popup');
-        const popupImage = popup.querySelector('.popup__image');
-        const popupCaption = popup.querySelector('.popup__caption');
-
-        popupImage.src = this._link;
-        popupImage.alt = this._name;
-        popupCaption.textContent = this._name;
-
-        openModal(popup);
+        this._handleCardClick(this._link, this._name);
     }
 
     _setEventListeners() {
