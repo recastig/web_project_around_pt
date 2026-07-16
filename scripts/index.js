@@ -1,5 +1,5 @@
-import { Card } from './card.js';
-import { FormValidator } from './formValidator.js';
+import { Card } from './Card.js';
+import { FormValidator } from './FormValidator.js';
 import { openModal, closeModal, handleEscClose, handleOverlayClick, handleCloseButtonClick } from './utils.js';
 
 const validationConfig = {
@@ -94,8 +94,6 @@ function handleCardFormSubmit(evt) {
     };
     cardsContainer.prepend(createCard(newCardData));
     closeModal(newCardModal);
-    newCardForm.reset();
-    newCardFormValidator.resetValidation();
 }
 
 editButton.addEventListener('click', handleOpenEditModal);
