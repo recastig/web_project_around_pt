@@ -1,7 +1,9 @@
 export class UserInfo {
-    constructor({ nameSelector, jobSelector }) {
+    constructor({ nameSelector, jobSelector, avatarSelector }) {
         this._nameElement = document.querySelector(nameSelector);
         this._jobElement = document.querySelector(jobSelector);
+        // Item 9: precisa de referência ao <img> do avatar para poder trocá-lo.
+        this._avatarElement = document.querySelector(avatarSelector);
     }
 
     getUserInfo() {
@@ -11,8 +13,12 @@ export class UserInfo {
         };
     }
 
-    setUserInfo({ name, job }) {
+    // Item 1/9: agora também recebe (opcionalmente) o link do avatar.
+    setUserInfo({ name, job, avatar }) {
         this._nameElement.textContent = name;
         this._jobElement.textContent = job;
+        if (avatar) {
+            this._avatarElement.src = avatar;
+        }
     }
 }

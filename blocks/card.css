@@ -68,3 +68,8 @@
 .card__like-button_is-active {
   background: transparent url("../images/like-active.svg") no-repeat;
 }
+
+/* Item 7: esconde a lixeira de cartões que não pertencem ao usuário logado. */
+.card__delete-button_hidden {
+  display: none;
+}
