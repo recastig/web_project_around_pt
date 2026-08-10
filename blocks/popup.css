@@ -147,7 +147,6 @@
   cursor: default;
 }
 
-/* Item 6: pop-up de confirmação é mais estreito e mais baixo que os demais. */
 .popup__content_type_confirmation {
   min-height: auto;
   max-width: 358px;
