@@ -15,8 +15,6 @@ const validationConfig = {
     errorClass: 'popup__error_visible'
 };
 
-// Item 11: instância única da API usada em todo o projeto.
-// TODO: troque 'SEU_TOKEN_AQUI' pelo seu token pessoal.
 const api = new Api({
     baseUrl: 'https://around-api.pt-br.tripleten-services.com/v1',
     headers: {
@@ -33,7 +31,6 @@ const editFormElement = document.querySelector('#edit-profile-form');
 const addButton = document.querySelector('.profile__add-button');
 const newCardForm = document.querySelector('#new-card-form');
 
-// Item 9: botão novo (pencil) sobre o avatar.
 const avatarEditButton = document.querySelector('.profile__avatar-edit-button');
 const avatarFormElement = document.querySelector('#edit-avatar-form');
 
@@ -55,7 +52,6 @@ const userInfo = new UserInfo({
 const popupWithImage = new PopupWithImage('#image-popup');
 popupWithImage.setEventListeners();
 
-// Item 6/7: guardam qual cartão está esperando confirmação de exclusão.
 let selectedCardId = null;
 let selectedCard = null;
 
@@ -73,19 +69,16 @@ function handleCardClick(link, name) {
     popupWithImage.open(link, name);
 }
 
-// Item 8: devolve a promise da API; quem trata o resultado é o próprio Card.
 function handleLikeClick(cardId, isLiked) {
     return api.changeLikeCardStatus(cardId, isLiked);
 }
 
-// Item 6/7: abre o pop-up de confirmação e guarda o cartão em questão.
 function handleDeleteClick(cardId, card) {
     selectedCardId = cardId;
     selectedCard = card;
     deleteConfirmationPopup.open();
 }
 
-// Item 2/7: precisa saber o id do usuário logado pra decidir se mostra a lixeira.
 let currentUserId = null;
 
 function createCard(data) {
@@ -97,11 +90,8 @@ function createCard(data) {
     return card.generateCard();
 }
 
-// cardSection só existe depois que os dados do servidor chegarem (ver abaixo).
 let cardSection;
 
-// Item 1/2/11: busca perfil + cartões juntos; só renderiza depois que os
-// dois chegarem.
 api.getAppInfo()
     .then(([userData, cards]) => {
         currentUserId = userData._id;
@@ -142,7 +132,6 @@ const newCardPopup = new PopupWithForm('#new-card-popup', (data) => {
 });
 newCardPopup.setEventListeners();
 
-// Item 9: pop-up de trocar avatar.
 const avatarPopup = new PopupWithForm('#edit-avatar-popup', (data) => {
     avatarPopup.renderLoading(true);
     api.updateAvatar(data.avatar)
