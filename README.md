@@ -8,7 +8,7 @@
 
 Aplicação web de galeria de lugares turísticos, desenvolvida durante o bootcamp de desenvolvimento web. Consome uma API REST própria para persistir usuários e cartões, com CRUD completo (criar, ler, atualizar, deletar).
 
-**🔗 Deploy:** _[link para o projeto hospedado]_
+**🔗 Deploy:** _[https://github.com/recastig/web_project_around_pt]_
 
 ---
 
@@ -221,8 +221,8 @@ Durante o desenvolvimento deste projeto, foram aplicados e consolidados:
 
 **Renan Castiglioni**
 
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](#)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](#)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/recastig/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)]([#](https://www.linkedin.com/in/renancastiglioni/))
 
 ---
 
