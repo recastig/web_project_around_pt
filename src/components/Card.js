@@ -1,3 +1,4 @@
+// Motivo de chaves no constructor
 export class Card {
     constructor(data, templateSelector, userId, { handleCardClick, handleLikeClick, handleDeleteClick }) {
         this._name = data.name;

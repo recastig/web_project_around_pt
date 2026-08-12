@@ -8,7 +8,7 @@ export class Api {
         if (res.ok) {
             return res.json();
         }
-        return Promise.reject(`Erro: ${res.status}`);
+        return Promise.reject(new Error(`Erro: ${res.status}`));
     }
 
     getUserInfo() {
